@@ -22,6 +22,7 @@ function post(posturl, json, suc) {
         error: (err) => {
             console.log(err);
             next_word_recommend_null(['로딩 실패']);
+            suc(result);
         }
     });
 }
@@ -117,14 +118,14 @@ function change_mask(word) {
 
 var isCtrl, isEnter;
 
-document.onkeyup = function(e) {
-    if (e.which == 17)  isCtrl = false;
-    if (e.which == 13)  isEnter = false;
+document.onkeyup = function (e) {
+    if (e.which == 17) isCtrl = false;
+    if (e.which == 13) isEnter = false;
 }
 
-document.onkeydown = function(e) {
-    if (e.which == 17)  isCtrl = true;
-    if (e.which == 13)  isEnter = true;
+document.onkeydown = function (e) {
+    if (e.which == 17) isCtrl = true;
+    if (e.which == 13) isEnter = true;
     if (isCtrl == true && isEnter == true && maskflag == 0) {
         console.log('start')
         var text = $('textarea').val();
@@ -132,20 +133,20 @@ document.onkeydown = function(e) {
         if (lastsen.indexOf('[MASK]') != -1) {
             next_word_recommend_null(['로딩중']);
             maskflag = 1;
-            post('/nextword', {'text':lastsen}, (res) => {
+            post('/nextword', { 'text': lastsen }, (res) => {
                 next_word_recommend(res['res']);
                 setTimeout(() => {
                     maskflag = 0;
-                    console.log('end');    
+                    console.log('end');
                 }, 1000)
             });
         }
         return false;
-   }
+    }
 }
 
 
-$("textarea").on("change keyup paste", function(e) {
+$("textarea").on("change keyup paste", function (e) {
     $('#Backup').fadeOut();
     ifedit = 1;
     keywordflag = 1;
@@ -171,7 +172,7 @@ function save() {
 $(document).ready(() => {
     get_keyword();
     var text = localStorage.getItem('text');
-    if (text != '' || text != null) {
+    if (text != '' && text != null) {
         $('textarea').val(text);
         $('#Backup').fadeIn();
         $('.char-num').text(text.length + '자');

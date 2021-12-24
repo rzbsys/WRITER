@@ -1,4 +1,6 @@
 flask
 gunicorn
-transformers
+transformers==4.15.0
 konlpy
+pytorch
+py-hanspell

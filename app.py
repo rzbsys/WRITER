@@ -1,9 +1,10 @@
 from flask import Flask, render_template, request, jsonify
 from variable import *
 import re
-from hanspell import spell_checker
-from tfidf import keyword_extractor
-from bertmodel import get_next_words
+if ServiceAccess == True:
+    from hanspell import spell_checker
+    from tfidf import keyword_extractor
+    from bertmodel import get_next_words
 
 def spckt(text):
     spelled_sent = spell_checker.check(text)

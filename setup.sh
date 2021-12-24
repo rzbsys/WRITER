@@ -1,4 +1,7 @@
 apt-get update
 apt-get upgrade
-apt-get install g++ open jdk-8-jdk python3-dev python3-pip curl
-pip3 install -r requirements.txt
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+git clone https://github.com/ssut/py-hanspell.git
+cd py-hanspell
+python3 setup.py install
+cd ..
