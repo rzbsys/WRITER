@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ServiceName}}</title>
+    <link rel="shortcut icon" href="{{ url_for('static', filename='img/favicon.ico') }}">
+    <link href='//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="{{url_for('static', filename='css/common.css')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/write.css')}}">
+</head>
+<body>
+
+    <div class="offline flex" style="flex-direction: column;">
+        <img src="{{url_for('static', filename='img/logo.svg')}}" class="err-img">
+        <h2 style="margin-top: 20px;">{{ErrTitle}}</h2>
+        <p
+            style="width: 80%; margin-top: 20px; background-color: rgb(240, 240, 240); padding: 10px 10px; border-radius: 10px; color: grey; max-width: 400px;">
+            {{error}}</p>
+    </div>
+
+</body>
+</html>

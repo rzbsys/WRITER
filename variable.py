@@ -1,0 +1,2 @@
+ServiceName = 'WRITER'
+ServiceAccess = True

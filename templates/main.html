@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ServiceName}}</title>
+    <link rel="shortcut icon" href="{{ url_for('static', filename='img/favicon.ico') }}">
+
+    <link href='//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="{{url_for('static', filename='css/common.css')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/main.css')}}">
+
+
+</head>
+
+<body>
+    <div class="mobile flex" style="flex-direction: column;">
+        <img src="{{url_for('static', filename='img/logo.svg')}}" class="err-img">
+        <h2 style="margin-top: 20px;">현재 해상도를<br>지원하지 않습니다.</h2>
+        <p
+            style="width: 80%; margin-top: 20px; background-color: rgb(240, 240, 240); padding: 10px 10px; border-radius: 10px; color: grey; max-width: 400px;">
+            접속한 기기의 해상도가 매우 낮거나, 모바일로 접속된 것으로 인식되었습니다. 다른 기기에서 다시시도해주세요.</p>
+    </div>
+    <header>
+        <div class="inner-header">
+            <img src="{{url_for('static', filename='img/logo.svg')}}" class="logo-img">
+            <h3 style="margin-left: 10px;">{{ServiceName}}</h3>
+        </div>
+    </header>
+    <div class="frame">
+        <div class="section">
+            <div class="blank"></div>
+            <h1 class="title"><span style="color: grey;">글쓰기의 모든 것.</span><br>{{ServiceName}}으로 시작하세요.</h1>
+            <button class="start_service b6 f2">시작하기 →</button>
+            <img src="{{url_for('static', filename='img/pagemain.svg')}}" class="main-img">
+        </div>
+        <div class="section section-full flex"
+            style="background-color: rgb(250, 250, 250); height: 60vh; flex-direction: column;">
+            <h1>수많은 글을 학습한 AI와 함께 글을 작성하세요.</h1>
+            <h1>글을 작성하면 아래와 같이 인공지능이 다음 단어를 추천해줍니다.</h1>
+            <div class="flex" style="margin-top: 20px;">
+                <h3 class="text-box">대한민국의 수도는<br>[MASK] 입니다.</h3>
+                <h3>→</h3>
+                <h3 class="text-box" style="color: var(--MC);">텍스트<br>전처리 수행</h3>
+                <h3>→</h3>
+                <h3 class="text-box" style="color: var(--MC);">{{ServiceName}}<br>인공지능</h3>
+
+                <h3>→</h3>
+                <div class="flex" style="flex-direction: column;">
+                    <div class="flex">
+                        <h3 class="text-box">서울</h3>
+                        <h3 class="text-box">광화문</h3>
+                    </div>
+                    <div class="flex">
+                        <h3 class="text-box">서울특별시</h3>
+                        <h3 class="text-box">부산</h3>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+
+        <div class="section section-full flex" style="background-color: rgb(245, 245, 245); height: 90vh;">
+            <div class="flex inner-section">
+                <div class="bert-card flex" style="flex-direction: column; margin-right: 60px;">
+                    <img src="{{url_for('static', filename='img/BERT.png')}}" width="60%">
+                    <h1 style="margin-top: 20px;">GOOGLE BERT</h1>
+                    <h5 style="width: calc(100% - 80px); text-align: center; color: grey; margin-top: 5px;" class="b4">
+                        BERT(Bidirectional Encoder Representations from Transformers)는 2018년에 구글이 공개한 사전 훈련된 모델입니다.
+                        BERT라는 이름은 세서미 스트리트라는 미국 인형극의 케릭터 이름이기도 한데, 앞서 소개한 임베딩 방법론인 ELMo와 마찬가지로 세서미 스트리트의 케릭터 이름을 따온
+                        것이기도 합니다.</h5>
+                </div>
+                <div style="width: 600px;">
+                    <h1 style="font-size: 40px; margin-bottom: 30px;">{{ServiceName}}은 Google에서<br>제작한 BERT 신경망을 사용합니다.
+                    </h1>
+                    <h3 class="b4">Google에서 제작한 BERT 모델은 자연어 처리를 위해 제작되었으며, 현재 자연어 처리 모델 중 가장 많이 사용되고 있습니다.
+                        {{ServiceName}}은 이러한 신뢰성과 정확성 모두 높은 BERT모델을 미세조정하여 사용합니다. 다양한 주제를 학습한 {{ServiceName}}는 자소서,
+                        생활기록부, 독서감상문과 같은 글을 작성할 때 도움을 줄 수 있을것으로 기대합니다.</h3>
+                </div>
+            </div>
+        </div>
+
+        <div class="section section-full flex" style="background-color: rgb(245, 245, 245); height: 90vh;">
+            <div class="flex inner-section">
+                <div style="width: 600px;">
+                    <h1 style="font-size: 40px; margin-bottom: 30px;">{{ServiceName}}은 키워드 추출을 위해<br>KoNLPy라이브러리를 사용합니다.
+                    </h1>
+                    <h3 class="b4">KoNLPy는 한국어 텍스트 전처리에 있어, 필수적으로 사용되는 라이브러리입니다. 사용법도 매우 간단하여 누구나 사용할 수 있고, 높은 정확도를 보여줍니다. {{ServiceName}}에서는 이러한 KoNLPy 라이브러리와 TF-IDF 유사도를 사용하여 입력된 글에서 키워드를 추출하여 사용자에게 보여줍니다. 따라서 사용자는 핵심어를 기반으로 글을 의도한대로 쓰고 있는지 확인할 수 있습니다.</h3>
+                </div>
+
+                <div class="bert-card flex" style="flex-direction: column; margin-left: 60px;">
+                    <img src="{{url_for('static', filename='img/konlpy.png')}}" width="60%">
+                    <h1 style="margin-top: 20px;">KoNLPy</h1>
+                    <h5 style="width: calc(100% - 80px); text-align: center; color: grey; margin-top: 5px;" class="b4">
+                        KoNLPy는 같은 기능을 하는 또 하나의 도구를 만들려는 것이 아닙니다. 그보다는, 현존하는 도구 위에 한 층을 쌓아 더 멀리 내다보려는 것입니다. 또한 KoNLPy는
+                        파이썬 프로그래밍 언어로 사용할 수 있도록 만들어졌는데, 그것은 파이썬이 간결하고 우아한 문법구조, 강력한 스트링 연산 기능을 가지고 있을 뿐 아니라 크롤링, 웹프로그래밍,
+                        그리고 데이터 분석을 수행할 수 있는 다양한 패키지를 사용할 수 있는 언어이기 때문입니다.</h5>
+                </div>
+            </div>
+        </div>
+
+        <div class="section section-full flex" style="background-color: rgb(245, 245, 245); height: 90vh;">
+            <div class="flex inner-section">
+                <div class="bert-card flex" style="flex-direction: column; margin-right: 60px;">
+                    <img src="{{url_for('static', filename='img/NAVERAI.png')}}" width="60%">
+                    <h1 style="margin-top: 20px;">Hanspell</h1>
+                    <h5 style="width: calc(100% - 80px); text-align: center; color: grey; margin-top: 5px;" class="b4">
+                        파이썬의 pyhanspell 라이브러리는 네이버 맞춤법 검사기를 이용한 한글 맞춤법 검사 라이브러리다. 네이버에서 맞춤법 검사기를 검색해 제공되는 맞춤법 검사기와 동일한 검사 결과를 얻을 수 있다. 이에 대한 결과 데이터의 저작권과 책임은 네이버에 있으며 라이브러리는 MIT 라이선스로 제공된다.</h5>
+                </div>
+                <div style="width: 600px;">
+                    <h1 style="font-size: 40px; margin-bottom: 30px;">맞춤법 검사를 위해 Py-Hanspell 라이브러리를 사용합니다.</h1>
+                    <h3 class="b4">네이버 맞춤법 검사기를 기반으로 제작된 Py-Hanspell은 맞춤법 검사 결과 문제가 없는 단어 또는 구절, 맞춤법에 문제가 있는 단어 또는 구절, 띄어쓰기에 문제가 있는 단어 또는 구절, 표준어가 의심되는 단어 또는 구절, 통계적 교정에 따른 단어 또는 구절을 탐지하고 수정합니다.</h3>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="section section-full flex" style="background-color: rgb(240, 240, 240); flex-direction: column;">
+            <h1 style="font-size: 40px;">최고의 전문가와 함께 지금바로 시작하세요!</h1>
+            <h3 style="margin-top: 15px;" class="b4">전문가들이 인정한 {{ServiceName}}, 무료로 사용할 수 있습니다.</h3>
+            <div class="flex" style="margin-top: 60px;">
+                <div class="bert-card flex" style="flex-direction: column; padding: 20px 5px; margin: 0px 20px; width: 230px;">
+                    <video class="pro-vid" src="{{url_for('static', filename='img/dg.mp4')}}" muted autoplay></video>
+                    <h2 style="margin-top: 5px;">황동규</h2>
+                    <h2 style="color: rgb(255, 240, 27);"> ★ ★ ★ ★ ★</h2>
+                    <h5 style="margin-top: 10px; color: grey;" class="b4">국어 9등급도 쓸수 있습니다.</h5>
+                </div>
+
+                <div class="bert-card flex" style="flex-direction: column; padding: 20px 5px; margin: 0px 20px; width: 230px;">
+                    <video class="pro-vid" src="{{url_for('static', filename='img/dg.mp4')}}" muted autoplay></video>
+                    <h2 style="margin-top: 5px;">황동규</h2>
+                    <h2 style="color: rgb(255, 240, 27);"> ★ ★ ★ ★ ★</h2>
+                    <h5 style="margin-top: 10px; color: grey;" class="b4">수학 5등급도 쓸수 있습니다.</h5>
+                </div>
+
+                <div class="bert-card flex" style="flex-direction: column; padding: 20px 5px; margin: 0px 20px; width: 230px;">
+                    <video class="pro-vid" src="{{url_for('static', filename='img/dg.mp4')}}" muted autoplay></video>
+                    <h2 style="margin-top: 5px;">황동규</h2>
+                    <h2 style="color: rgb(255, 240, 27);"> ★ ★ ★ ★ ★</h2>
+                    <h5 style="margin-top: 10px; color: grey;" class="b4">영어 5등급도 쓸수 있습니다.</h5>
+                </div>
+
+            </div>
+            <button class="start_service b6 f2" style="margin-top: 60px;">시작하기 →</button>
+        </div>
+
+        <div class="section section-full flex"
+            style="height: 50px; background-color: rgb(235, 235, 235); flex-direction: column;">
+            <h5 style="color: grey;" class="b4">Designed By 20529 전민국</h5>
+
+        </div>
+
+    </div>
+</body>
+<script src="{{url_for('static', filename='js/jquery.js')}}"></script>
+<script src="{{url_for('static', filename='js/main.js')}}"></script>
+<!-- Channel Plugin Scripts -->
+<script>
+    (function () {
+        var w = window;
+        if (w.ChannelIO) {
+            return (window.console.error || window.console.log || function () { })('ChannelIO script included twice.');
+        }
+        var ch = function () {
+            ch.c(arguments);
+        };
+        ch.q = [];
+        ch.c = function (args) {
+            ch.q.push(args);
+        };
+        w.ChannelIO = ch;
+        function l() {
+            if (w.ChannelIOInitialized) {
+                return;
+            }
+            w.ChannelIOInitialized = true;
+            var s = document.createElement('script');
+            s.type = 'text/javascript';
+            s.async = true;
+            s.src = 'https://cdn.channel.io/plugin/ch-plugin-web.js';
+            s.charset = 'UTF-8';
+            var x = document.getElementsByTagName('script')[0];
+            x.parentNode.insertBefore(s, x);
+        }
+        if (document.readyState === 'complete') {
+            l();
+        } else if (window.attachEvent) {
+            window.attachEvent('onload', l);
+        } else {
+            window.addEventListener('DOMContentLoaded', l, false);
+            window.addEventListener('load', l, false);
+        }
+    })();
+    ChannelIO('boot', {
+        "pluginKey": "3a7b1161-7539-4b60-a862-1bb0e7584258"
+    });
+</script>
+<!-- End Channel Plugin -->
+
+</html>

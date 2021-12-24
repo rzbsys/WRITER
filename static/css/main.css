@@ -1,0 +1,96 @@
+@media screen and (min-width: 769px) {
+    .mobile {
+        display: none !important;
+    }
+}
+
+.frame {
+    width: calc(100vw - var(--Padding));
+    padding: 0px calc(var(--Padding) / 2);
+    height: -webkit-fill-available;
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    overflow-y: scroll;
+}
+
+.inner-section {
+    width: calc(100% - 100px);
+    height: calc(100% - 150px);
+}
+
+.bert-card {
+    width: 350px;
+    height: 100%;
+    background-color: white;
+    border-radius: 30px;
+}
+
+
+
+
+.section-full {
+    width: 100vw !important; 
+    left: 0px; 
+    margin-left: calc(-1 * var(--Padding) / 2);
+}
+
+
+
+
+.title {
+    font-size: 70px;
+}
+
+.start_service {
+    width: 160px;
+    height: 50px;
+    border: 0px;
+    margin-top: 20px;
+    border-radius: 100px;
+    cursor: pointer;
+    color: white;
+    background-color: var(--MC);
+}
+
+.main-img {
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    height: 95%;
+    z-index: -1;
+}
+
+.blank {
+    height: 50vh;
+}
+
+.section {
+    position: relative;
+    height: calc(100vh + 50px);
+    width: 100%;
+}
+
+.scrolled {
+    background-color: rgba(255, 255, 255, 0.85);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);  
+    box-shadow: 0px 0px 15px -8px grey;
+}
+
+
+.text-box {
+    background-color: rgb(240, 240, 240);
+    color: grey;
+    margin: 5px 5px;
+    text-align: center;
+    padding: 5px 20px;
+    border-radius: 10px;
+}
+
+.pro-vid {
+    width: 150px;
+    height: 150px;
+    border-radius: 100%;
+}
+
