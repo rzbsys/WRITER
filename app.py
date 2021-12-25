@@ -5,7 +5,7 @@ import os
 if ServiceAccess == True:
     from hanspell import spell_checker
     from tfidf import keyword_extractor
-    # from bertmodel import get_next_words
+    from bertmodel import get_next_words
 
 def spckt(text):
     spelled_sent = spell_checker.check(text)
