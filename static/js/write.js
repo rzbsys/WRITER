@@ -9,7 +9,6 @@ function progress(part, all) {
 }
 
 function post(posturl, json, suc) {
-    clearInterval(timer);
     $.ajax({
         type: 'POST',
         url: posturl,
@@ -20,9 +19,12 @@ function post(posturl, json, suc) {
             suc(result);
         },
         error: (err) => {
-            console.log(err);
-            next_word_recommend_null(['로딩 실패']);
-            suc(result);
+            Res = err['responseJSON']
+            if (Res['redirect'] == 'yes') {
+                location.href = Res['redirect_url'];
+            } else {
+                next_word_recommend_null(['추천 단어를 불러오는데 실패하였습니다. 토큰이 만료되었을 수 있습니다..']);
+            }
         }
     });
 }
@@ -68,6 +70,7 @@ function add_keyword(arr) {
 
 function get_keyword() {
     timer = setInterval(() => {
+        console.log(1111);
         if (keywordflag == 1) {
             console.log('Start Logging');
             var text = $('textarea').val();

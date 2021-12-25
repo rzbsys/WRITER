@@ -9,5 +9,5 @@ $('.frame').scroll(function () {
 
 
 $('.start_service').on('click', () => {
-    location.href = '/write';
+    location.href = '/pass';
 });
