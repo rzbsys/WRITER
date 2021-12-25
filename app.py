@@ -81,14 +81,17 @@ def spellckt():
             break
     edited_text = []
     for i in splited_text:
-        edited_text += [spckt(i)]
+        text = spckt(i)
+        if (text == i):
+            continue
+        edited_text += [text]
     return jsonify({'origin':splited_text, 'spellckt':edited_text})
     
 @app.route('/nextword', methods=['POST'])
 def nextword():
     if not 'pass' in session or session['pass'] != Password:
         return jsonify({'redirect_url':'/expired', 'redirect':'no'}), 400
-
+    
     text = request.get_json()['text']
     res = get_next_words(text)
     return jsonify({'res':res})

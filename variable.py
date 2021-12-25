@@ -1,3 +1,3 @@
 ServiceName = 'WRITER'
 ServiceAccess = True
-Password = 'Pass'
+Password = 'Dux 연구소'
