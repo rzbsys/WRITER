@@ -70,7 +70,6 @@ function add_keyword(arr) {
 
 function get_keyword() {
     timer = setInterval(() => {
-        console.log(1111);
         if (keywordflag == 1) {
             console.log('Start Logging');
             var text = $('textarea').val();
@@ -90,7 +89,7 @@ function get_keyword() {
             });
             keywordflag = 0;
         }
-    }, 1000 * 10);
+    }, 1000 * 30);
 }
 
 
